@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The organic store</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-96x96.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="scrip.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head> 
+<body> 
+    <div class="page">
+        <div class="top_header">
+            <div class="col-2 col-sm-8" id="main">
+                <div class="contact">
+                     <ul>
+                         <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                         <li>|</li>
+                         <li>Free Shipping for all Order of  &#x20b9;99</li>
+                     </ul>
+                </div>
+            </div>
+            <div class="col-2 col-sm-9">
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-p"></i></a>    
+                    <img src="img/language.png" alt="">
+                    <div>English</div>
+                    <span class="arrow_carrot-down"></span>
+                    <a id="loginBtn" onclick="logbtn1()">
+                        <i class="fa fa-user"></i>&nbsp;Login
+                    </a>
+                    <a id="logout" onclick="logbtn1()">
+                    </a>
+                    
+                </div>
+                <div id="loginForm1">   
+                    <div id="loginForm">
+                        <button type="button" onclick="closebtn()"><i class="fa fa-times fa-2x"></i> </button>
+                        <form>
+                            <h2>Login</h2>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                            <a id="login123" onclick="signin()">Submit</a><br>
+                            <a href="#" onclick="signup()">If don't have an account? Register here</a>
+                        </form>
+                    </div>
+                </div>
+                <div id="signupForm1">
+                    <form id="signupForm">  
+                        <a></a>
+                        <button type="button" onclick="closebtn()"><i class="fa fa-times fa-2x"></i> </button>
+                        <h2>Signup Form</h2>
+                        <label for="email-register">Email:</label>
+                        <input type="text" id="email-register" onchange="ValidateEmail()" required>
+                        <label for="mobile-register">Mobile number:</label>
+                        <input type="text" id="mobile-register" minlength="10" maxlength="10" on required>
+                        <label for="password-register">Password:</label>
+                        <input type="password" id="password-register" required>
+                        <label for="password-confirmation">Confirm Password:</label>
+                        <input type="password-confirmation" id="password-confirmation" required>
+                        <p><input type="checkbox" id="accept-terms" required></p>
+                        <label for="accept-terms" >I agree to the Terms</label>
+                        <button type="submit" onclick="signupsub()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>       
+        <div class="second_header">
+            <div class="logo">
+               <a href="index.html"><img src="img/logo.jpg" alt="The organic store"></a>
+            </div>
+            <div class="top_menu">
+                <ul>
+                    <li class="active1"><a href="index.html">Home</a></li>
+                    <li class="shop1"><a href="">Shop</a>
+                        <ul class="list21">
+                            <li><a href="#Meat_items">Fresh Meat</a></li>
+                            <li><a href="#Vegetable_items">Vegetables</a></li>
+                            <li><a href="#Fruits_items">Fruits</a></li>
+                            <li><a href="#Berries_items">Fresh Berries</a></li>
+                            <li><a href="#Ocean_Foods">Ocean Foods</a></li>
+                            <li><a href="#Eggs">Butter & Eggs</a></li>
+                        </ul>
+                    </li>
+                    <li class="pages1"><a href="">Pages</a>
+                        <ul class="header__menu__dropdown">
+                            <li><a href="./shop-details.html">Shop Details</a></li>
+                            <li><a href="#" onclick="shpcrt()">Shoping Cart</a></li>
+                            <li><a href="#" onclick="shpcrt() & pay()">Check Out</a></li>
+                            <li><a href="./blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>    
+                    <li><a href="https://agronicfood.com/agronic-blog/">Blog</a></li>
+                    <li><a href="#bottom">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cartd">
+                <p id=" total_price">
+                <a id="like1" onclick="like()"><i class="fa fa-heart">
+                </i>&nbsp;
+                <span id="like">1</span></a>&nbsp;
+                <a class="shopt" onclick="shpcrt()"><i class="fa fa-shopping-bag"></i>
+                item:&nbsp;
+                &#x20b9;<span id="carttot">0</span></a></p>
+
+            </div>
+        </div>
+        <div id="idrt">
+            <div class="category" id="cat34">
+                <div class="search">
+                    <div class="search_bar">
+                            <div class="search_categories">
+                                <form class="form2">
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                                </form>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="phone">
+                    <div class="phone__icon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="phone_text">
+                        <h4>+91 900000001</h4>
+                        <span>support 24/7 time</span>
+                    </div>
+                </div>'
+                <div>
+                    <a href="">hi</a>
+                </div>'
+                <div class="hero__item">
+                    <div class="offer1_item">
+                        <span>FRUIT FRESH</span>
+                        <h2>Vegetable <br/>100% Organic</h2>
+                        <p>Free Pickup and Delivery Available</p>
+                        <a href="#Vegetable_items" class="primary-btn">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="row" id="shcart">
+                    <div class="pro1">
+                        <div class="title1">
+                            <h2>Offers</h2>
+                        </div>
+                        <div class="offer2_head" align="center">
+                            <div class="offers2_item">
+                                <img src="img/banner/banner-1.jpg" alt="banner-1">
+                            </div>
+                            <div class="banner3">
+                                <img src="img/banner/banner-3.jpg" alt="banner-3">
+                            </div>
+                            <div class="offers2_item">
+                                <img src="img/banner/banner-2.jpg" alt="banner-2">
+                            </div>
+                        </div>
+                        <div class="fruits" id="header1">
+                            <h2>Fruits</h2> 
+                        </div>
+                        <div id="Fruits_items" class="count">
+                            <div class="item 1" id="bananas">
+                                <img src="img/product/product-2.jpg">
+                                <p>Fresh bananas</p>
+                                <span>Price:<del>&#x20b9:35/kg</del><ins>&#x20b9;<span id="price">30</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 2" id="guava">
+                                <img src="img/product/product-3.jpg">
+                                <p>Guava</p>
+                                <span>Price:<del>&#x20b9:61/kg</del><ins>&#x20b9;<span id="price">53</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 3" id="Grapes">
+                                <img src="img/product/product-4.jpg">
+                                <p>Grapes</p>
+                                <span>Price:<del>&#x20b9:50/kg</del><ins>&#x20b9;<span id="price">35</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 4" id="Mango">
+                                <img src="img/product/product-6.jpg">
+                                <p>Mango</p>
+                                <span>Price:<del>&#x20b9:50/kg</del><ins>&#x20b9;<span id="price">35</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 5" id="Water_melon">
+                                <img src="img/product/product-7.jpg">
+                                <p>Water melon</p>
+                                <span>Price:<del>&#x20b9:60/kg</del><ins>&#x20b9;<span id="price">54</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 6"id="apple">
+                                <img src="img/product/product-8.jpg">
+                                <p>Apple</p>
+                                <span>Price:<del>&#x20b9:170/kg</del><ins>&#x20b9;<span id="price">150</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 7" id="orange">
+                                <img src="img\product\product-13.jpg">
+                                <p>Orange</p>
+                                <span>Price:<del>&#x20b9 80/kg</del><ins>&#x20b9;<span id="price">70</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 8" id="papaya">
+                                <img src="img\product\product-14.jpg">
+                                <p>Papaya</p>
+                                <span>Price:<del>&#x20b9 40/kg</del><ins>&#x20b9;<span id="price">34</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 9" id="mango">
+                                <img src="img\product\product-15.jpg">
+                                <p>Mango</p>
+                                <span>Price:<del>&#x20b9 75/kg</del><ins>&#x20b9;<span id="price">70</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 10" id="strawberry">
+                                <img src="img\product\product-16.jpg">
+                                <p>Strawberry</p>
+                                <span>Price:<del>&#x20b9 200/kg</del><ins>&#x20b9;<span id="price">190</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                        </div>
+                        <div id="header1">
+                            <h2>Vegetables</h2>
+                        </div>
+                        <div id="Vegetable_items" class="count" >
+                            <div class="item 1" id="coconut">
+                                <img src="img/Vegetable/1-coconut-un-branded-whole-no-original-imaf8cjshfdg2nwh.jpg">
+                                <p>Coconut</p>
+                                <span>Price:<del>&#x20b9:20/Piece</del><ins>&#x20b9;<span id="price">18</span>/piece</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 2" id="coriander_leaves">
+                                <img src="img/Vegetable/100-coriander-leaves-un-branded-no-whole-original-imafv2ftwahffgb5.jpeg">
+                                <p>Coriander-leaves</p>
+                                <span>Price:<del>&#x20b9:10/Piece</del><ins>&#x20b9;<span id="price">8</span>/piece</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 3" id="potato">
+                                <img src="img/Vegetable/2-potato-un-branded-no-whole-original-imafdsymh2aepaph.jpeg">
+                                <p>Potato</p>
+                                <span>Price:<del>&#x20b9:40/Kg</del><ins>&#x20b9;<span id="price">37</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 4" id="sweet_corn">
+                                <img src="img/Vegetable/2-sweet-corn-un-branded-no-whole-original-imafdsfxvghfqtzh.jpeg">
+                                <p>Sweet corn</p>
+                                <span>Price:<del>&#x20b9:50/kg</del><ins>&#x20b9;<span id="price">48</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 5" id="green_chilli">
+                                <img src="img/Vegetable/200-chilli-green-un-branded-whole-no-original-imaf95czf5rcvatn.jpeg">
+                                <p>Green chilli</p>
+                                <span>Price:<del>&#x20b9:100/kg</del><ins>&#x20b9;<span id="price">80</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 6" id="garlic">
+                                <img src="img/Vegetable/250-garlic-un-branded-no-whole-original-imafdrzsu9j6fuwq.jpeg">
+                                <p>Garlic</p>
+                                <span>Price:<del>&#x20b9:150/kg</del><ins>&#x20b9;<span id="price">125</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 7" id="ginger">
+                                <img src="img/Vegetable/250-ginger-un-branded-no-whole-original-imafdsy3ec5ghe38.jpeg">
+                                <p>Ginger</p>
+                                <span>Price:<del>&#x20b9:150/kg</del><ins>&#x20b9;<span id="price">125</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 8" id="red_Cabbage">
+                                <img src="img/Vegetable/400-cabbage-red-namdhari-s-fresh-no-whole-original-imafv27ybxggsj4u.jpeg">
+                                <p> Red Cabbage</p>
+                                <span>Price:<del>&#x20b9:60/kg</del><ins>&#x20b9;<span id="price">52</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 9" id="carrote">
+                                <img src="img/Vegetable/500-carrot-un-branded-no-whole-original-imaffns64ghsr4va.jpeg">
+                                <p>Carrote</p>
+                                <span>Price:<del>&#x20b9:70/kg</del><ins>&#x20b9;<span id="price">66</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 10" id="onion">
+                                <img src="img/Vegetable/5-onion-un-branded-no-whole-original-imafdsyg4ykqcyt4.jpeg">
+                                <p>Onion</p>
+                                <span>Price:<del>&#x20b9:30/kg</del><ins>&#x20b9;<span id="price">28</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>         
+                        </div>
+                        <div id="header1">
+                            <h2>Fresh Berries</h2>
+                        </div>
+                        <div id="Berries_items" class="count" >
+                            <div class="item 1" id="dried_Cranberries">
+                                <img src="img/berries/180-sweet-tart-sliced-pouch-nutraj-original-imaff7z2c3nga7dk.jpeg">
+                                <p>Nutraj American Dried Cranberries  (180 g)</p>
+                                <span>Price:<del>&#x20b9:225</del><ins>&#x20b9;<span id="price">187</span></ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 2" id="sliced_Cranberries">
+                                <img src="img/berries/200-cranberries-sliced-pouch-wonderland-original-imaftqf6r7thxvae.jpeg">
+                                <p>WONDERLAND Sliced Cranberries  (200 g)</p>
+                                <span>Price:<del>&#x20b9:290</del><ins>&#x20b9;<span id="price">253</span></ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 3" id="exotic_Berries">
+                                <img src="img/berries/350-exotic-berries-combo-pack-dried-cranberries-dried-original-imagaqz9jh7zqmwb.jpeg">
+                                <p>BOYO Exotic Berries Combo Pack (2 x 175 g)</p>
+                                <span>Price:<del>&#x20b9:790</del><ins>&#x20b9;<span id="price">450</span></ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 4" id="dried_Whole">
+                                <img src="img/berries/500-natural-dried-whole-cranberries-dry-fruits-no-added-sugar-original-imafzapq9pxd8u7w.jpeg">
+                                <p>Dried Whole Cranberries dry fruits - No Added Sugar(500 g)</p>
+                                <span>Price:<del>&#x20b9:800</del><ins>&#x20b9;<span id="price">627</span></ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 5" id="dried_Kiwi">
+                                <img src="img/berries/-original-imag9fusehqhr3vg.jpeg">
+                                <p>Happilo Premium International Dried Kiwi  (200 g)
+                                </p>
+                                <span>Price:<del>&#x20b9:200</del><ins>&#x20b9;<span id="price">136</span></ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                        </div>
+                        <div id="header1">
+                            <h2>Fresh Meat</h2>
+                        </div>
+                        <div id="Meat_items" class="count" >
+                            <div class="item 1" id="chicken_with_skin">
+                                <img src="img/Meat/Chicken skin.jpg">
+                                <p>Chicken with skin</p>
+                                <span>Price:<del>&#x20b9:180kg</del><ins>&#x20b9;<span id="price">160</span>Kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 2" id="chicken_without_skin">
+                                <img src="img/Meat/Chicken.jpg">
+                                <p>Chicken without skin</p>
+                                <span>Price:<del>&#x20b9:200kg</del><ins>&#x20b9;<span id="price">180</span> kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 3" id="mutton_Boneless">
+                                <img src="img/Meat/Mutton boneless.jpg">
+                                <p>Mutton Boneless</p>
+                                <span>Price:<del>&#x20b9:1000kg</del><ins>&#x20b9<span id="price">900</span>; kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 4" id="mutton_with_bone">
+                                <img src="img/Meat/Muttone bone.jpg">
+                                <p>Mutton with bone</p>
+                                <span>Price:<del>&#x20b9:800kg</del><ins>&#x20b9;<span id="price">750</span>750</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 5" id="mince_Keema">
+                                <img src="img/Meat/Goat-Mince_Keema--Hero-Shot.jpg">
+                                <p>Goat-mince Keema</p>
+                                <span>Price:<del>&#x20b9:900kg</del><ins>&#x20b9;<span id="price">850</span> kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i>&nbsp; Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="Oceanfoods" id="header1">
+                            <h2>Ocean foods</h2> 
+                        </div>
+                        <div id="Ocean_Foods" class="count">
+                            <div class="item 1" id="Pearl_Spot">
+                                <img src="img/Meat/Pearl Spot (Karimeen or Pattai) Small - Whole, Cleaned With Head.jpg">
+                                <p>Pearl Spot (Karimeen or Pattai) </p>
+                                <span>Price:<del>&#x20b9:550/kg</del><ins>&#x20b9;<span id="price">350</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 2" id="RuiKannadi">
+                                <img src="img/Meat/Rohu (RuiKannadi Kendai) Medium - Bengali Cut, No Head.jpg">
+                                <p>Rohu (RuiKannadi Kendai) </p>
+                                <span>Price:<del>&#x20b9:700/kg</del><ins>&#x20b9;<span id="price">650</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 3" id="White_Prawns">
+                                <img src="img/Meat/White Prawns  Small - Cleaned & Deveined.jpg">
+                                <p>White Prawns  </p>
+                                <span>Price:<del>&#x20b9:400/kg</del><ins>&#x20b9;<span id="price">320</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 4" id="Parshe">
+                                <img src="img/Meat/Parshe - Whole & Cleaned, No Tail.jpg">
+                                <p>Parshe - Whole & Cleaned, No Tail</p>
+                                <span>Price:<del>&#x20b9:550/kg</del><ins>&#x20b9;<span id="price">480</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 5" id="Nethili">
+                                <img src="img/Meat/Anchovy (Nethili or Kollathuru) Medium - Whole, Cleaned.jpg">
+                                <p>Anchovy (Nethili or Kollathuru)</p>
+                                <span>Price:<del>&#x20b9:550/kg</del><ins>&#x20b9;<span id="price">480</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="buttereg" id="header1">
+                            <h2>Butter & Eggs</h2> 
+                        </div>
+                        <div id="Eggs" class="count">
+                            <div class="item 1" id="AMUL_Butter">
+                                <img src="img/eggs/AMUL Butter 200 GM. (Pack of 2)279.jpg">
+                                <p>AMUL Butter 200 GM</p>
+                                <span>Price:<del>&#x20b9:350/kg</del><ins>&#x20b9;<span id="price">279</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 2" id="DiSano_Peanut">
+                                <img src="img/eggs/DiSano Peanut Butter 299.jpg">
+                                <p>DiSano Peanut Butter</p>
+                                <span>Price:<del>&#x20b9:320/kg</del><ins>&#x20b9;<span id="price">299</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 3" id="Pintola_Peanut">
+                                <img src="img/eggs/Pintola All Natural Peanut Butter (Creamy) (1kg (Pack of 1))  399.jpg">
+                                <p>Pintola Peanut Butter</p>
+                                <span>Price:<del>&#x20b9:450/kg</del><ins>&#x20b9;<span id="price">399</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 4" id="Sundrop_Peanut">
+                                <img src="img/eggs/Sundrop Peanut Butter, Crunchy, 924g 238.jpg">
+                                <p>Sundrop Peanut Butter</p>
+                                <span>Price:<del>&#x20b9:310/kg</del><ins>&#x20b9;<span id="price">238</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                            <div class="item 5" id="eggs">
+                                <img src="img/eggs/download.jpg">
+                                <p>Eggs</p>
+                                <span>Price:<del>&#x20b9:60/kg</del><ins>&#x20b9;<span id="price">55</span>/kg</ins></span><br>
+                                <label for="Quantity">Quantity</label>
+                                <input type="number" name="Quantity" value=1>
+                                <button id="addcart" onclick="add()"><i class="fa fa-shopping-cart"></i> &nbsp; Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="shoping-cart">
+            <div class="shoping-cart123">
+                <h2 id="headcart">Shopping cart</h2>
+                <div id="shopitm" class="">
+                    <div id="shop-cart">
+                        <table id="shop_cart_items">
+                            <tr id="tbhead">
+                                <th>Product</th>
+                                <th>Product Name</th>
+                                <th>Price per kg/pcs</th>
+                                <th>Quanity</th>
+                                <th>Gross total</th>
+                                <th>Remove</th>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Total</td>
+                                <td>&#x20b9</td>
+                                <td><span id="netamt0">o</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="netp2">`
+                        <h1>Total Cart Value</h1>
+                        <h2>&#x20b9<span id="netamt1"></span></h2>
+                    </div>
+                </div>
+                <div class=cartbut>
+                    <div id="butt1">
+                        <button class="addmo" onclick="shpcrt1()">Add more</button>
+                        <button id="checkou" onclick="pay()">Check out</button>
+                    </div>
+                </div>
+                <div class="end4">
+                    <div class="end1">
+                        <div>
+                            <h3>Billing Address</h3>
+                            <form action="" id="checkot1">  
+                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Name" required>
+                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                <input type="text" id="email" name="email" placeholder=mailid@example.com">
+                                <label for="adr" class="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                <input type="text" id="adr" name="address" placeholder="address" required>
+                                <label for="city"><i class="fa fa-institution"></i> City</label>
+                                <input type="text" id="city" name="city" placeholder="Chennai" required> 
+                                <label for="state"><i class="fa fa-map-o" aria-hidden="true"></i> State</label>
+                                <input type="text" id="state" name="state" placeholder="Tamilnadu" required>
+                                <label for="pin"><i class="fa fa-envelope" aria-hidden="true"></i> Pin code</label>
+                                <input type="text" id="pin" name="Pin" placeholder="600001" required>
+                            </form>
+                        </div>
+                        <div class="pay1">
+                            <h2>Payment</h2>
+                            <h1> Total cart amount&#x20b9:<span id="totalamt123"></span> </h1>
+                            <p>Accepted cards <i class="fa fa-credit-card" aria-hidden="true"></i></p>
+                            <div class="icon-container">
+                                <i class="fa fa-cc-visa" style="font-size:28px;color:red"></i>
+                                <i class="fa fa-cc-mastercard" style="font-size:28px;color:blueviolet"></i>
+                            </div>  
+                            <form action="" class="end12">
+                                <label for="noc"><i class="fa fa-user"></i>Name of the card</label>
+                                <input id="noc" type="text" placeholder="Name of card">
+                                <label for="cardno"><i class="fa fa-credit-card" aria-hidden="true"></i> Enter card number</label>
+                                <input id="cardno" type="text" placeholder="card Number" maxlength="16">
+                                <label for="cvv"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Enter CVV numberr</label>
+                                <input id="cVV" type="text" placeholder="CVV" maxlength="4">
+                                <label for="exp1"><i class="fa fa-calendar" aria-hidden="true"></i>Expiry date</label>
+                                <input  id="exp1" type="month">
+                            </form>
+                        </div>
+                        <button>Proceed to payment</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="contact12">
+            <a href="#top"><i class="fa fa-angle-double-up" aria-hidden="true"></i>Scroll top<i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+            <div class="contact123" id="bottom">
+                <div class="about">
+                    <ul>
+                        <P>About</P>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Story of Organic</a></li>
+                        <li><a href="#">Corporate information</a></li>
+
+                    </ul>
+                </div>
+                <div class="help">
+                    <ul>
+                        <p>Help</p>
+                        <li><a href="#">Payment</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Cancellation</a></li>
+                        <li><a href="#">FaQ</a></li>
+                    </ul>
+                </div>
+                <div class="consumer_policy">
+                    <ul>
+                        <p>CONSUMER POLICY</p>
+                        <li><a href="#">Return policy</a></li>
+                        <li><a href="#">Term of use</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+                <div class="social1">
+                    <ul>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Social</p>
+                        <li><a href="#"class="fa fa-facebook">&nbsp;Facebook</a></li>
+                        <li><a href="#" class="fa fa-twitter">&nbsp;Twitter</a></li>
+                        <li><a href="#"class="fa fa-youtube">&nbsp;Youtube</a></li>
+                        <li><a href="#" class="fa fa-instagram">&nbsp;Instagram </a></li>
+                    </ul>
+                </div>
+                <div class="office">
+                    <p>Address</p>
+                    <p>Organic hub private limited<br>
+                    Poonamali hign Road,<br>
+                    Chennai-600001</p>
+                </div>
+        </div>
+
+        </div>
+        
+                    
+                    
+
+                
+    </div>
+</body>
+</html>
